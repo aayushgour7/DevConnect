@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 // import axios from 'axios'
-import { Link, Redirect } from "react-router-dom";
+import { Link, Navigate  } from "react-router-dom";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
@@ -44,7 +44,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Navigate  to="/dashboard" />;
   }
   return (
     <Fragment>

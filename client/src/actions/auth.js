@@ -6,7 +6,8 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  CLEAR_PROFILE,
 } from "./types";
 // import { header } from "express-validator";
 import { setAlert } from "./alert";
@@ -96,6 +97,7 @@ export const login = (email, password) => async (dispatch) => {
 
 // logout
 
-// export const logout = () => dispatch => {
-//   dispatch
-// }
+export const logout = () => (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
+  dispatch({ type: LOGOUT });
+};
